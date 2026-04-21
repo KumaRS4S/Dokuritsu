@@ -433,7 +433,7 @@ async function sendMsg() {
   messages.push({role:'user', content:text});
   showTyping();
   try {
-    const res = await fetch('/api/chat', {
+    const res = await fetch('/.netlify/functions/chat'{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYSTEM,messages})
