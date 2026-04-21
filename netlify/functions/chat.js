@@ -15,6 +15,7 @@ exports.handler = async (event) => {
     });
 
     const data = await response.json();
+    console.log(JSON.stringify(data));
     return {
       statusCode: response.status,
       headers: { 'Content-Type': 'application/json' },
