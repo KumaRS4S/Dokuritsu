@@ -3,40 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dokuritsu Tours — Real Japan. Real Roads.</title>
+<title>Dokuritsu Tours — Private Japan Driving Tour Guide | JDM Car Culture Experiences</title>
+<meta name="description" content="Dokuritsu Tours offers private guided driving experiences across Japan. Explore mountain passes, JDM car culture, track days, and hidden roads with an expert guide based in Kanagawa. Self-drive tours, trip planning, and group drives.">
+<meta name="keywords" content="Japan driving tour, JDM tour Japan, car culture Japan, guided driving Japan, Hakone driving, Kanagawa tour, Japan road trip guide, JDM car meet, touge Japan, Japan car enthusiast tour">
+<meta name="author" content="Dokuritsu Tours">
+<meta property="og:title" content="Dokuritsu Tours — Private Japan Driving Experiences">
+<meta property="og:description" content="Self-drive guided tours across Japan's best roads and car culture spots. Expert local guide, Kanto region and beyond.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dokuritsu.tours">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dokuritsu Tours — Real Japan. Real Roads.">
+<meta name="twitter:description" content="Private driving experiences across Japan. Mountain passes, JDM meets, track days, and beyond.">
+<link rel="canonical" href="https://dokuritsu.tours">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#1a1714;
-  --paper:#f2ede6;
-  --rust:#8b3a1a;
-  --rust-light:#c45c2e;
-  --muted:#6b6560;
-  --border:rgba(26,23,20,0.15);
+  --ink:#e8e6e2;
+  --paper:#161820;
+  --rust:#5a7a3a;
+  --rust-light:#7a9e56;
+  --muted:#8a8d96;
+  --border:rgba(232,230,226,0.12);
+  --card-bg:#1e2028;
+  --section-alt:#1a1c24;
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:rgba(242,237,230,0.93);backdrop-filter:blur(8px);border-bottom:0.5px solid var(--border)}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:rgba(22,24,32,0.95);backdrop-filter:blur(8px);border-bottom:0.5px solid var(--border)}
 .nav-logo{font-family:'Zen Antique',serif;font-size:1.05rem;letter-spacing:0.08em}
 .nav-logo span{color:var(--rust)}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-size:0.8rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--ink)}
-.nav-cta{font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:none;padding:0.55rem 1.2rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s}
-.nav-cta:hover{background:var(--rust)}
+.nav-cta{font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;background:var(--rust);color:#f2ede6;border:none;padding:0.55rem 1.2rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s}
+.nav-cta:hover{background:var(--rust-light)}
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:flex-end;padding:4rem;overflow:hidden}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,6,0.92) 0%,rgba(10,8,6,0.45) 50%,rgba(10,8,6,0.2) 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,6,0.93) 0%,rgba(10,14,8,0.45) 50%,rgba(10,14,8,0.15) 100%)}
 .hero-content{position:relative;z-index:2;max-width:700px}
-.hero-tag{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--rust-light);margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem}
-.hero-tag::before{content:'';display:inline-block;width:28px;height:1px;background:var(--rust-light)}
+.hero-tag{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:#7a9e56;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem}
+.hero-tag::before{content:'';display:inline-block;width:28px;height:1px;background:#7a9e56}
 .hero-title{font-family:'Zen Antique',serif;font-size:clamp(2.8rem,6.5vw,5.5rem);line-height:1.06;color:#f2ede6;margin-bottom:1.4rem}
 .hero-title em{color:var(--rust-light);font-style:normal}
 .hero-sub{font-size:1rem;color:rgba(242,237,230,0.62);max-width:44ch;line-height:1.75;margin-bottom:2.2rem;font-weight:300}
@@ -57,26 +70,26 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.about-media{position:relative;overflow:hidden;aspect-ratio:4/3}
+.about-media{position:relative;overflow:hidden;aspect-ratio:4/3;background:#1e2028}
 .about-media img{width:100%;height:100%;object-fit:cover;display:block}
-.about-corner{position:absolute;bottom:-12px;right:-12px;width:72px;height:72px;border:2px solid var(--rust);opacity:0.5;pointer-events:none}
+.about-corner{position:absolute;bottom:-12px;right:-12px;width:72px;height:72px;border:2px solid var(--rust-light);opacity:0.6;pointer-events:none}
 .about-text p{color:var(--muted);line-height:1.82;margin-bottom:1.2rem;font-weight:300;font-size:1rem}
 .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
 .stat{border-left:2px solid var(--rust);padding-left:1rem}
-.stat-num{font-family:'Zen Antique',serif;font-size:2rem}
+.stat-num{font-family:'Zen Antique',serif;font-size:2rem;color:var(--ink)}
 .stat-label{font-size:0.72rem;color:var(--muted);letter-spacing:0.07em;text-transform:uppercase;margin-top:0.2rem}
 
 /* EXPERIENCES */
-.exp-section{background:var(--ink);padding:5rem 2rem}
+.exp-section{background:#0f1018;padding:5rem 2rem}
 .exp-inner{max-width:1200px;margin:0 auto}
-.exp-section .section-label{color:var(--rust-light)}
+.exp-section .section-label{color:#8fb560}
 .exp-section .section-title{color:#f2ede6}
-.exp-section .divider{background:var(--rust-light)}
+.exp-section .divider{background:#8fb560}
 .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;margin-top:3rem}
-.exp-card{background:#2a2219;padding:0;border-top:2px solid transparent;transition:border-color 0.3s,background 0.3s;cursor:default;overflow:hidden}
-.exp-card:hover{border-color:var(--rust);background:#332a1f}
+.exp-card{background:#1a1c24;padding:0;border-top:2px solid transparent;transition:border-color 0.3s,background 0.3s;cursor:default;overflow:hidden}
+.exp-card:hover{border-color:var(--rust);background:#1e2028}
 .exp-card-body{padding:2rem}
-.exp-num{font-family:'Zen Antique',serif;font-size:0.72rem;color:var(--rust-light);margin-bottom:1.2rem;letter-spacing:0.12em}
+.exp-num{font-family:'Zen Antique',serif;font-size:0.72rem;color:#8fb560;margin-bottom:1.2rem;letter-spacing:0.12em}
 .exp-card h3{font-family:'Zen Antique',serif;font-size:1.25rem;color:#f2ede6;margin-bottom:0.75rem}
 .exp-card p{font-size:0.88rem;color:rgba(242,237,230,0.5);line-height:1.72;font-weight:300}
 
@@ -89,24 +102,24 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .gallery-item:hover img{transform:scale(1.04)}
 
 /* CHAT */
-.chat-section{background:#f7f3ed;padding:5rem 2rem}
+.chat-section{background:#1a1c24;padding:5rem 2rem}
 .chat-inner{max-width:800px;margin:0 auto}
 .chat-intro{text-align:center;margin-bottom:2.5rem}
 .chat-intro p{color:var(--muted);font-weight:300;line-height:1.75;max-width:52ch;margin:0 auto}
-.chat-window{background:#fff;border:0.5px solid var(--border)}
+.chat-window{background:#1e2028;border:0.5px solid var(--border)}
 .chat-history{padding:1.5rem;display:flex;flex-direction:column;gap:1rem;max-height:360px;overflow-y:auto}
 .msg{display:flex;gap:0.75rem;align-items:flex-start}
 .msg.user{flex-direction:row-reverse}
 .msg-avatar{width:26px;height:26px;flex-shrink:0;background:var(--ink);display:flex;align-items:center;justify-content:center}
 .msg-avatar.u{background:var(--rust)}
 .msg-avatar svg{width:13px;height:13px}
-.msg-body{font-size:0.87rem;line-height:1.62;color:var(--ink);padding:0.6rem 0.9rem;background:#f0ebe3;max-width:85%}
+.msg-body{font-size:0.87rem;line-height:1.62;color:var(--ink);padding:0.6rem 0.9rem;background:#252830;max-width:85%}
 .msg.user .msg-body{background:var(--rust);color:#f2ede6}
 .dot{width:6px;height:6px;background:var(--muted);border-radius:50%;display:inline-block;animation:b 1.2s infinite}
 .dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}
 @keyframes b{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
-.chat-footer{border-top:0.5px solid var(--border);display:flex}
-.chat-input{flex:1;border:none;outline:none;padding:1rem 1.2rem;font-family:'DM Sans',sans-serif;font-size:0.88rem;background:transparent;color:var(--ink)}
+.chat-footer{border-top:0.5px solid var(--border);display:flex;background:#1e2028}
+.chat-input{flex:1;border:none;outline:none;padding:1rem 1.2rem;font-family:'DM Sans',sans-serif;font-size:0.88rem;background:#1e2028;color:var(--ink)}
 .chat-input::placeholder{color:rgba(26,23,20,0.3)}
 .chat-send{background:var(--ink);color:#f2ede6;border:none;padding:0 1.4rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.07em;text-transform:uppercase;transition:background 0.2s}
 .chat-send:hover{background:var(--rust)}
@@ -122,20 +135,20 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .detail-text{font-size:0.87rem;color:var(--muted);line-height:1.65}
 .form-group{margin-bottom:1.2rem}
 .form-label{display:block;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.45rem}
-.form-input,.form-select,.form-textarea{width:100%;border:0.5px solid var(--border);background:transparent;padding:0.72rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.88rem;color:var(--ink);outline:none;transition:border-color 0.2s;appearance:none;-webkit-appearance:none}
+.form-input,.form-select,.form-textarea{width:100%;border:0.5px solid var(--border);background:#1e2028;color:var(--ink);padding:0.72rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.88rem;color:var(--ink);outline:none;transition:border-color 0.2s;appearance:none;-webkit-appearance:none}
 .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--rust)}
 .form-textarea{min-height:100px;resize:vertical}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.submit-btn{width:100%;background:var(--ink);color:#f2ede6;border:none;padding:1rem;font-family:'DM Sans',sans-serif;font-size:0.83rem;letter-spacing:0.09em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;margin-top:0.5rem}
-.submit-btn:hover{background:var(--rust)}
-.form-success{display:none;text-align:center;padding:3rem 2rem;border:0.5px solid var(--border)}
+.submit-btn{width:100%;background:var(--rust);color:#f2ede6;border:none;padding:1rem;font-family:'DM Sans',sans-serif;font-size:0.83rem;letter-spacing:0.09em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;margin-top:0.5rem}
+.submit-btn:hover{background:var(--rust-light)}
+.form-success{display:none;text-align:center;padding:3rem 2rem;border:0.5px solid var(--border);background:#1e2028}
 .form-success h3{font-family:'Zen Antique',serif;font-size:1.4rem;margin-bottom:0.75rem}
 .form-success p{color:var(--muted);font-weight:300}
 
 /* FOOTER */
-footer{background:var(--ink);color:rgba(242,237,230,0.45);padding:3rem 2rem}
+footer{background:#0f1018;color:rgba(232,230,226,0.45);padding:3rem 2rem}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
-.footer-logo{font-family:'Zen Antique',serif;color:#f2ede6;font-size:1rem}
+.footer-logo{font-family:'Zen Antique',serif;color:var(--ink);font-size:1rem}
 .footer-logo span{color:var(--rust-light)}
 .footer-links{display:flex;gap:2rem}
 .footer-links a{font-size:0.75rem;color:rgba(242,237,230,0.4);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s}
@@ -162,6 +175,21 @@ footer{background:var(--ink);color:rgba(242,237,230,0.45);padding:3rem 2rem}
   .footer-links{flex-wrap:wrap;justify-content:center}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristInformationCenter",
+  "name": "Dokuritsu Tours",
+  "description": "Private guided driving experiences across Japan for car enthusiasts. JDM car culture, mountain passes, track days, and bespoke road trip planning.",
+  "url": "https://dokuritsu.tours",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Japan"
+  },
+  "serviceType": ["Driving Tour Guide", "JDM Car Sourcing", "Trip Planning", "Group Drive Planning"],
+  "knowsLanguage": ["English", "Japanese"]
+}
+</script>
 </head>
 <body>
 
@@ -207,11 +235,11 @@ footer{background:var(--ink);color:rgba(242,237,230,0.45);padding:3rem 2rem}
       <div class="section-label">The Guide</div>
       <h2 class="section-title">Lived-in knowledge.<br>Not guidebook knowledge.</h2>
       <div class="divider"></div>
-      <p>I've spent years driving every prefecture in Japan — from the Nurburgring-inspired passes of Nikko to the pre-dawn emptiness of Ōsaka's bayfront expressways. This isn't a curated tour. It's access to the places, people, and moments that take years to discover.</p>
-      <p>Whether you want to attend a tucked-away kei car meet in the Kanagawa mountains or need someone to navigate the JDM import scene on your behalf, I make the complicated simple.</p>
+      <p>Nine years in Japan — across Ehime, Hiroshima, and now Kanagawa — and I've spent most of them behind the wheel. Mountain passes, expressways, backroads, car meets. I've been a JDM and drifting obsessive since I was 17, and living here has only made it worse. This isn't a curated tour. It's access to the places, people, and moments that take years to find.</p>
+      <p>Whether you want to attend a tucked-away car meet in the mountains, need someone to navigate the JDM import scene, or just want a local who speaks the language and knows where to go — I make the complicated simple.</p>
       <div class="about-stats">
         <div class="stat"><div class="stat-num">47</div><div class="stat-label">Prefectures driven</div></div>
-        <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Years in Japan</div></div>
+        <div class="stat"><div class="stat-num">9+</div><div class="stat-label">Years in Japan</div></div>
         <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Canned coffees consumed</div></div>
         <div class="stat"><div class="stat-num">1</div><div class="stat-label">Guide you'll actually need</div></div>
       </div>
@@ -346,15 +374,18 @@ footer{background:var(--ink);color:rgba(242,237,230,0.45);padding:3rem 2rem}
     </div>
     <div>
       <div id="bookingForm">
+      <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="enquiry">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="form-row">
-          <div class="form-group"><label class="form-label">First name</label><input class="form-input" type="text" id="fname" placeholder="Kenji"></div>
-          <div class="form-group"><label class="form-label">Last name</label><input class="form-input" type="text" id="lname" placeholder="Tanaka"></div>
+          <div class="form-group"><label class="form-label">First name</label><input class="form-input" type="text" name="first-name" placeholder="Kenji" required></div>
+          <div class="form-group"><label class="form-label">Last name</label><input class="form-input" type="text" name="last-name" placeholder="Tanaka"></div>
         </div>
-        <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" id="email" placeholder="you@example.com"></div>
+        <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" name="email" placeholder="you@example.com" required></div>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Experience type</label>
-            <select class="form-select" id="expType">
+            <select class="form-select" name="experience-type">
               <option value="">Select...</option>
               <option>Mountain Pass Routes</option>
               <option>Car Culture Immersion</option>
@@ -366,7 +397,7 @@ footer{background:var(--ink);color:rgba(242,237,230,0.45);padding:3rem 2rem}
           </div>
           <div class="form-group">
             <label class="form-label">Group size</label>
-            <select class="form-select" id="groupSize">
+            <select class="form-select" name="group-size">
               <option value="">Select...</option>
               <option>Solo</option>
               <option>2 people</option>
@@ -375,10 +406,10 @@ footer{background:var(--ink);color:rgba(242,237,230,0.45);padding:3rem 2rem}
             </select>
           </div>
         </div>
-        <div class="form-group"><label class="form-label">Approximate dates</label><input class="form-input" type="text" id="dates" placeholder="e.g. Late October, 5–7 days"></div>
-        <div class="form-group"><label class="form-label">Tell me what you have in mind</label><textarea class="form-textarea" id="message" placeholder="Describe your dream Japan driving experience..."></textarea></div>
-        <button class="submit-btn" onclick="submitForm()">Send Enquiry</button>
-      </div>
+        <div class="form-group"><label class="form-label">Approximate dates</label><input class="form-input" type="text" name="dates" placeholder="e.g. Late October, 5–7 days"></div>
+        <div class="form-group"><label class="form-label">Tell me what you have in mind</label><textarea class="form-textarea" name="message" placeholder="Describe your dream Japan driving experience..."></textarea></div>
+        <button type="submit" class="submit-btn">Send Enquiry</button>
+      </form>
       <div class="form-success" id="formSuccess">
         <h3>Enquiry received.</h3>
         <p>I'll be in touch within 48 hours. Start thinking about your route.</p>
@@ -396,7 +427,7 @@ footer{background:var(--ink);color:rgba(242,237,230,0.45);padding:3rem 2rem}
       <a href="#gallery">Gallery</a>
       <a href="#book">Book</a>
     </div>
-    <a href="https://instagram.com" class="footer-ig">Instagram ↗</a>
+    <a href="https://instagram.com/ngnm_yokohama" class="footer-ig">Instagram ↗</a>
     <div class="footer-copy">© 2026 Dokuritsu Tours. Japan.</div>
   </div>
 </footer>
@@ -443,10 +474,10 @@ async function sendMsg() {
   messages.push({role:'user', content:text});
   showTyping();
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch('/.netlify/functions/chat', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYSTEM,messages})
+      body: JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1000,system:SYSTEM,messages})
     });
     const data = await res.json();
     const reply = data.content?.map(b=>b.text||'').join('') || 'Something went wrong — please try again.';
@@ -461,12 +492,19 @@ async function sendMsg() {
 
 function sendQ(btn) { document.getElementById('chatInput').value = btn.textContent; sendMsg(); }
 
-function submitForm() {
-  const fname = document.getElementById('fname').value.trim();
-  const email = document.getElementById('email').value.trim();
-  if (!fname || !email) { alert('Please fill in at least your name and email.'); return; }
-  document.getElementById('bookingForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(form)).toString()
+  }).then(() => {
+    document.getElementById('bookingForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }).catch(() => {
+    alert('Something went wrong — please try again or email us directly.');
+  });
 }
 </script>
 </body>
