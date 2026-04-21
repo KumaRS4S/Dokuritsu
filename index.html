@@ -346,18 +346,15 @@ footer{background:var(--ink);color:rgba(242,237,230,0.45);padding:3rem 2rem}
     </div>
     <div>
       <div id="bookingForm">
-      <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
-        <input type="hidden" name="form-name" value="enquiry">
-        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="form-row">
-          <div class="form-group"><label class="form-label">First name</label><input class="form-input" type="text" name="first-name" placeholder="Kenji" required></div>
-          <div class="form-group"><label class="form-label">Last name</label><input class="form-input" type="text" name="last-name" placeholder="Tanaka"></div>
+          <div class="form-group"><label class="form-label">First name</label><input class="form-input" type="text" id="fname" placeholder="Kenji"></div>
+          <div class="form-group"><label class="form-label">Last name</label><input class="form-input" type="text" id="lname" placeholder="Tanaka"></div>
         </div>
-        <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" name="email" placeholder="you@example.com" required></div>
+        <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" id="email" placeholder="you@example.com"></div>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Experience type</label>
-            <select class="form-select" name="experience-type">
+            <select class="form-select" id="expType">
               <option value="">Select...</option>
               <option>Mountain Pass Routes</option>
               <option>Car Culture Immersion</option>
@@ -369,7 +366,7 @@ footer{background:var(--ink);color:rgba(242,237,230,0.45);padding:3rem 2rem}
           </div>
           <div class="form-group">
             <label class="form-label">Group size</label>
-            <select class="form-select" name="group-size">
+            <select class="form-select" id="groupSize">
               <option value="">Select...</option>
               <option>Solo</option>
               <option>2 people</option>
@@ -378,10 +375,10 @@ footer{background:var(--ink);color:rgba(242,237,230,0.45);padding:3rem 2rem}
             </select>
           </div>
         </div>
-        <div class="form-group"><label class="form-label">Approximate dates</label><input class="form-input" type="text" name="dates" placeholder="e.g. Late October, 5–7 days"></div>
-        <div class="form-group"><label class="form-label">Tell me what you have in mind</label><textarea class="form-textarea" name="message" placeholder="Describe your dream Japan driving experience..."></textarea></div>
-        <button type="submit" class="submit-btn">Send Enquiry</button>
-      </form>
+        <div class="form-group"><label class="form-label">Approximate dates</label><input class="form-input" type="text" id="dates" placeholder="e.g. Late October, 5–7 days"></div>
+        <div class="form-group"><label class="form-label">Tell me what you have in mind</label><textarea class="form-textarea" id="message" placeholder="Describe your dream Japan driving experience..."></textarea></div>
+        <button class="submit-btn" onclick="submitForm()">Send Enquiry</button>
+      </div>
       <div class="form-success" id="formSuccess">
         <h3>Enquiry received.</h3>
         <p>I'll be in touch within 48 hours. Start thinking about your route.</p>
@@ -446,10 +443,10 @@ async function sendMsg() {
   messages.push({role:'user', content:text});
   showTyping();
   try {
-    const res = await fetch('/.netlify/functions/chat', {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1000,system:SYSTEM,messages})
+      body: JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYSTEM,messages})
     });
     const data = await res.json();
     const reply = data.content?.map(b=>b.text||'').join('') || 'Something went wrong — please try again.';
@@ -464,19 +461,12 @@ async function sendMsg() {
 
 function sendQ(btn) { document.getElementById('chatInput').value = btn.textContent; sendMsg(); }
 
-function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(new FormData(form)).toString()
-  }).then(() => {
-    document.getElementById('bookingForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  }).catch(() => {
-    alert('Something went wrong — please try again or email us directly.');
-  });
+function submitForm() {
+  const fname = document.getElementById('fname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!fname || !email) { alert('Please fill in at least your name and email.'); return; }
+  document.getElementById('bookingForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
 }
 </script>
 </body>
