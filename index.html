@@ -413,8 +413,11 @@ footer{background:#0f1018;color:rgba(232,230,226,0.45);padding:3rem 2rem}
         <button type="submit" class="submit-btn">Send Enquiry</button>
       </form>
       <div class="form-success" id="formSuccess">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--rust);margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#f2ede6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
         <h3>Enquiry received.</h3>
-        <p>I'll be in touch within 48 hours. Start thinking about your route.</p>
+        <p>Thanks for reaching out — I've got your message and I'll be in touch within 48 hours.<br>Start thinking about your route.</p>
       </div>
     </div>
   </div>
@@ -429,7 +432,7 @@ footer{background:#0f1018;color:rgba(232,230,226,0.45);padding:3rem 2rem}
       <a href="#gallery">Gallery</a>
       <a href="#book">Book</a>
     </div>
-    <a href="https://instagram.com/ngnm_yokohama" class="footer-ig">Instagram ↗</a>
+    <a href="https://www.instagram.com/dokuritsu_tours/" class="footer-ig">Instagram ↗</a>
     <div class="footer-copy">© 2026 Dokuritsu Tours. Japan.</div>
   </div>
 </footer>
@@ -497,14 +500,21 @@ function sendQ(btn) { document.getElementById('chatInput').value = btn.textConte
 function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
+  const btn = form.querySelector('.submit-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(new FormData(form)).toString()
   }).then(() => {
     document.getElementById('bookingForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    const success = document.getElementById('formSuccess');
+    success.style.display = 'block';
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }).catch(() => {
+    btn.textContent = 'Send Enquiry';
+    btn.disabled = false;
     alert('Something went wrong — please try again or email us directly.');
   });
 }
