@@ -1,3 +1,5 @@
+const { getStore } = require('@netlify/blobs');
+
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method not allowed' };
@@ -14,13 +16,32 @@ exports.handler = async (event) => {
       body: event.body
     });
 
-    const data = await response.json();
+  const data = await response.json();
     console.log(JSON.stringify(data));
-    return {
-      statusCode: response.status,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    };
+
+  // Best-effort logging for the monthly chat summary. Never blocks the reply.
+  try {
+    const reqBody = JSON.parse(event.body);
+    const lastUser = [...(reqBody.messages || [])].reverse().find(m => m.role === 'user');
+    const reply = (data.content || []).map(b => b.text || '').join('');
+    if (lastUser && reply) {
+      const store = getStore('chat-logs');
+      const key = `${new Date().toISOString()}-${Math.random().toString(36).slice(2, 8)}`;
+      await store.setJSON(key, {
+        timestamp: new Date().toISOString(),
+        question: lastUser.content,
+        reply
+      });
+    }
+  } catch (logErr) {
+    console.log('chat log write failed:', logErr.message);
+  }
+
+  return {
+    statusCode: response.status,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  };
   } catch (err) {
     return {
       statusCode: 500,
