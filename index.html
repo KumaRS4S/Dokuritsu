@@ -103,6 +103,18 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease}
 .gallery-item:hover img{transform:scale(1.04)}
 
+/* TESTIMONIALS */
+.testimonials-section{background:#0f1018;padding:5rem 2rem}
+.testimonials-inner{max-width:1200px;margin:0 auto}
+.testimonials-section .section-label{color:#8fb560}
+.testimonials-section .section-title{color:#f2ede6}
+.testimonials-section .divider{background:#8fb560}
+.testimonials-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.testimonial-card{background:#1a1c24;padding:2.5rem;border-left:2px solid var(--rust)}
+.testimonial-card p{color:rgba(242,237,230,0.6);font-size:0.92rem;line-height:1.82;font-weight:300;font-style:italic}
+.testimonial-attr{margin-top:1.5rem;font-size:0.82rem;color:var(--ink);font-style:normal;font-weight:400;letter-spacing:0.04em}
+@media(max-width:900px){.testimonials-grid{grid-template-columns:1fr}}
+
 /* CHAT */
 .chat-section{background:#1a1c24;padding:5rem 2rem}
 .chat-inner{max-width:800px;margin:0 auto}
@@ -243,6 +255,7 @@ footer{background:#0f1018;color:rgba(232,230,226,0.45);padding:3rem 2rem}
     <li><a href="#experiences">Experiences</a></li>
     <li><a href="#tours">Sample Tours</a></li>
     <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#ask">Ask Me</a></li>
     <li><a href="#book">Book</a></li>
   </ul>
@@ -484,6 +497,25 @@ footer{background:#0f1018;color:rgba(232,230,226,0.45);padding:3rem 2rem}
     </div>
   </div>
 </section>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-section" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label">What Clients Say</div>
+    <h2 class="section-title">Don't take my word for it.</h2>
+    <div class="divider"></div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p>"I've been to Japan many times over my life for both work and vacation, but I never had a chance to experience it behind the wheel. I always wanted to but never had the confidence or knew where to go. Justin's services provided me just that! Justin guided my friend group and me with three cars in total, and we were able to drive through iconic places such as Hakone, Fuji Speedway, and the famous Daikoku Parking Area. Justin is a highly knowledgeable resident of the area who will take you to many cool places in Tokyo. He's also very good at keeping you and your group together when you're driving through the Tokyo area. If you're into cars or just want to explore Japan in a cool ride without the stress of planning and looking places up, then Justin's tours are the way to go."</p>
+        <div class="testimonial-attr">C.K.</div>
+      </div>
+      <div class="testimonial-card">
+        <p>"We had an absolutely wonderful experience working with Justin from Dokuritsu Tours for our personal tour of Japan. From the very beginning, Justin was professional, responsive, knowledgeable, and incredibly easy to communicate with. What really stood out to us was how personalized the experience was. Justin took the time to understand what our family was interested in and gave us great recommendations based on our interests. We are also a big car-loving family, and Justin really made sure our trip included experiences we would genuinely enjoy. He helped us with Fuel Fest, took our interests in Japanese car culture into consideration, and helped us visit a car museum. He even assisted us through the rental car process, making something that could have been stressful incredibly easy. We would absolutely recommend him to anyone planning a trip to Japan!"</p>
+        <div class="testimonial-attr">O.K.</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- AI CHAT -->
 <div class="chat-section" id="ask">
